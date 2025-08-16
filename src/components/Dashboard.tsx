@@ -24,10 +24,21 @@ function Dashboard() {
     { icon: "lucide:users", label: "Gestión de usuarios y roles", path: "/dashboard/users" },
   ];
 
+  const [sidebarCollapsed, setSidebarCollapsed] = React.useState(false);
   return (
-    <div className="dashboard-bg flex flex-col sm:flex-row h-screen">
-      <Sidebar />
-      <div className="flex-1 flex flex-col overflow-hidden dashboard-bg min-w-0">
+    <div className="dashboard-bg flex h-screen">
+      {!sidebarCollapsed && <Sidebar collapsed={sidebarCollapsed} setCollapsed={setSidebarCollapsed} />}
+      {sidebarCollapsed && (
+        <button
+          className="fixed bottom-4 left-4 z-50 bg-green-500 text-white border border-white rounded-full p-2 shadow-lg"
+          onClick={() => setSidebarCollapsed(false)}
+          aria-label="Mostrar barra lateral"
+        >
+          <span className="sr-only">Mostrar barra lateral</span>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+        </button>
+      )}
+      <div className={`flex-1 flex flex-col overflow-hidden dashboard-bg transition-all duration-300`}>
         <Navbar isBordered className="px-2 sm:px-6">
           <NavbarBrand>
             <Icon icon="logos:bhp" width="48" height="24" className="sm:w-80 sm:h-40" />

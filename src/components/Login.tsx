@@ -34,14 +34,14 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-gray-100">
-      <Card className="w-full max-w-md">
-        <CardHeader className="flex flex-col items-center pb-6 pt-6 px-4">
-          <Icon icon="logos:bhp" width="120" height="60" />
-          <h1 className="text-2xl font-bold mt-4 text-gray-800">CarbonNet</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-gray-100 px-2 xs:px-0">
+      <Card className="w-full max-w-xs xs:max-w-sm sm:max-w-md">
+        <CardHeader className="flex flex-col items-center pb-4 pt-4 px-2 xs:pb-6 xs:pt-6 xs:px-4">
+          <Icon icon="logos:bhp" width="60" height="30" className="xs:w-24 xs:h-12" />
+          <h1 className="text-lg xs:text-xl sm:text-2xl font-bold mt-2 xs:mt-4 text-gray-800">CarbonNet</h1>
         </CardHeader>
         <CardBody>
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleLogin} className="space-y-3 xs:space-y-4">
             <Input
               label="Correo electrónico"
               placeholder="correo@ejemplo.com"

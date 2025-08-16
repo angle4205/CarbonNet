@@ -19,9 +19,9 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-  <aside className="dashboard-bg w-20 min-h-screen p-4 border-r border-gray-300 dark:border-carbonDark">
+  <aside className="dashboard-bg w-16 sm:w-20 min-h-screen p-2 sm:p-4 border-r border-gray-300 dark:border-carbonDark flex-shrink-0">
       <nav>
-        <ul className="space-y-2">
+  <ul className="space-y-1 sm:space-y-2">
           {sidebarItems.map((item) => (
             <li key={item.path}>
               <Link
@@ -34,9 +34,9 @@ const Sidebar = () => {
               >
                 <Icon
                   icon={item.icon}
-                  width="28"
-                  height="28"
-                  className={`transition-colors ${location.pathname === item.path ? "text-green-400" : ""} group-hover:text-green-400`}
+                  width="22"
+                  height="22"
+                  className={`transition-colors ${location.pathname === item.path ? "text-green-400" : ""} group-hover:text-green-400 sm:w-7 sm:h-7`}
                 />
               </Link>
             </li>

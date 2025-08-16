@@ -13,7 +13,7 @@ import Users from "./dashboard/Users";
 
 const DashboardContent = () => {
   return (
-  <main className="flex-1 overflow-x-hidden overflow-y-auto p-6 dashboard-bg">
+  <main className="flex-1 overflow-x-hidden overflow-y-auto p-2 xs:p-4 sm:p-6 dashboard-bg min-w-0">
       <Routes>
   <Route path="" element={<Home />} />
   <Route path="emissions" element={<Emissions />} />

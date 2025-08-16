@@ -25,22 +25,22 @@ function Dashboard() {
   ];
 
   return (
-    <div className="dashboard-bg flex h-screen">
+    <div className="dashboard-bg flex flex-col sm:flex-row h-screen">
       <Sidebar />
-      <div className="flex-1 flex flex-col overflow-hidden dashboard-bg">
-        <Navbar isBordered>
+      <div className="flex-1 flex flex-col overflow-hidden dashboard-bg min-w-0">
+        <Navbar isBordered className="px-2 sm:px-6">
           <NavbarBrand>
-            <Icon icon="logos:bhp" width="80" height="40" />
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-green-400 via-green-500 to-green-300 bg-clip-text text-transparent">CarbonNet</h2>
+            <Icon icon="logos:bhp" width="48" height="24" className="sm:w-80 sm:h-40" />
+            <h2 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-green-400 via-green-500 to-green-300 bg-clip-text text-transparent">CarbonNet</h2>
           </NavbarBrand>
-          <NavbarContent className="hidden sm:flex gap-4 dashboard-bg" justify="center">
+          <NavbarContent className="hidden xs:flex gap-2 sm:gap-4 dashboard-bg" justify="center">
             <NavbarItem>
               <div className="relative">
                 <Input
                   classNames={{
-                    base: "max-w-full sm:max-w-[32rem] h-10 dashboard-bg",
+                    base: "max-w-full xs:max-w-[16rem] sm:max-w-[32rem] h-9 sm:h-10 dashboard-bg",
                     mainWrapper: "h-full dashboard-bg",
-                    input: "text-small dashboard-bg",
+                    input: "text-xs sm:text-sm dashboard-bg",
                     inputWrapper: "h-full font-normal dashboard-bg",
                   }}
                   placeholder="Buscar..."

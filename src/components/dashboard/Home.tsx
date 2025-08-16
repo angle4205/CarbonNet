@@ -27,8 +27,8 @@ const Home = () => {
   const [showAlert, setShowAlert] = React.useState(true);
 
   return (
-    <div className="space-y-6">
-  <h1 className="text-2xl font-semibold">Panel de Control</h1>
+    <div className="space-y-4 xs:space-y-6">
+  <h1 className="text-lg xs:text-xl sm:text-2xl font-semibold">Panel de Control</h1>
       
       {showAlert && (
         <AlertBanner
@@ -38,7 +38,7 @@ const Home = () => {
         />
       )}
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-2 xs:gap-4 md:gap-6">
         <Card>
           <CardBody>
             <div className="flex justify-between items-center">
@@ -46,7 +46,7 @@ const Home = () => {
                 <p className="text-sm text-gray-500">Emisiones Totales</p>
                 <h3 className="text-2xl font-semibold">1,234 tCO2e</h3>
               </div>
-              <Icon icon="lucide:cloud" className="text-green-500" width="40" height="40" />
+              <Icon icon="lucide:cloud" className="text-green-500" width="24" height="24" />
             </div>
             <Progress value={60} className="mt-2" color="success" />
           </CardBody>
@@ -58,7 +58,7 @@ const Home = () => {
                 <p className="text-sm text-gray-500">Reducción Anual</p>
                 <h3 className="text-2xl font-semibold">15%</h3>
               </div>
-              <Icon icon="lucide:trending-down" className="text-blue-500" width="40" height="40" />
+              <Icon icon="lucide:trending-down" className="text-blue-500" width="24" height="24" />
             </div>
             <Progress value={15} className="mt-2" color="primary" />
           </CardBody>
@@ -70,7 +70,7 @@ const Home = () => {
                 <p className="text-sm text-gray-500">Iniciativas Activas</p>
                 <h3 className="text-2xl font-semibold">8</h3>
               </div>
-              <Icon icon="lucide:zap" className="text-yellow-500" width="40" height="40" />
+              <Icon icon="lucide:zap" className="text-yellow-500" width="24" height="24" />
             </div>
             <Progress value={80} className="mt-2" color="warning" />
           </CardBody>
@@ -82,7 +82,7 @@ const Home = () => {
                 <p className="text-sm text-gray-500">Cumplimiento de Metas</p>
                 <h3 className="text-2xl font-semibold">75%</h3>
               </div>
-              <Icon icon="lucide:check-circle" className="text-green-500" width="40" height="40" />
+              <Icon icon="lucide:check-circle" className="text-green-500" width="24" height="24" />
             </div>
             <Progress value={75} className="mt-2" color="success" />
           </CardBody>
@@ -94,7 +94,7 @@ const Home = () => {
           <h3 className="text-xl font-semibold">Tendencia de Emisiones</h3>
         </CardHeader>
         <CardBody>
-          <div className="h-80">
+          <div className="h-48 xs:h-64 sm:h-80">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={data}>
                 <CartesianGrid strokeDasharray="3 3" />

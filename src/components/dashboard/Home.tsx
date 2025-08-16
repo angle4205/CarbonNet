@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <div className="space-y-4 xs:space-y-6">
-  <h1 className="text-lg xs:text-xl sm:text-2xl font-semibold">Panel de Control</h1>
+  <h1 className="text-2xl font-semibold">Panel de Control</h1>
       
       {showAlert && (
         <AlertBanner

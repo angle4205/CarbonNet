@@ -9,6 +9,7 @@ interface AlertBannerProps {
 }
 
 const AlertBanner: React.FC<AlertBannerProps> = ({ type, message, onClose }) => {
+  const [fading, setFading] = React.useState(false);
   const iconMap = {
     success: "lucide:check-circle",
     warning: "lucide:alert-triangle",
@@ -16,15 +17,24 @@ const AlertBanner: React.FC<AlertBannerProps> = ({ type, message, onClose }) => 
     info: "lucide:info",
   };
 
+  // Cambia info a naranja
   const colorMap = {
-    success: "bg-green-100 text-green-800",
+    success: "bg-orange-100 text-orange-800",
     warning: "bg-yellow-100 text-yellow-800",
     error: "bg-red-100 text-red-800",
-    info: "bg-blue-100 text-blue-800",
+    info: "bg-orange-100 text-orange-800",
+  };
+
+  // Fade out al cerrar
+  const handleClose = () => {
+    setFading(true);
+    setTimeout(() => {
+      if (onClose) onClose();
+    }, 350);
   };
 
   return (
-    <Card className={`${colorMap[type]} mb-4`}>
+    <Card className={`${colorMap[type]} mb-4 transition-opacity duration-300 ${fading ? 'opacity-0' : 'opacity-100'}`}>
       <CardBody className="flex items-center justify-between p-4">
         <div className="flex items-center">
           <Icon icon={iconMap[type]} className="mr-2" width="24" height="24" />
@@ -36,7 +46,7 @@ const AlertBanner: React.FC<AlertBannerProps> = ({ type, message, onClose }) => 
             size="sm"
             variant="light"
             aria-label="Cerrar alerta"
-            onClick={onClose}
+            onClick={handleClose}
           >
             <Icon icon="lucide:x" />
           </Button>

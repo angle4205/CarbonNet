@@ -12,10 +12,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        carbonGreen: {
-          DEFAULT: '#059669',
-          dark: '#047857',
-          light: '#34d399',
+        carbonOrange: {
+          DEFAULT: '#ff8800', // Main orange
+          dark: '#cc7000',    // Darker orange
+          light: '#ffb347',   // Lighter orange
         },
         carbonDark: '#0a192f',
         carbonGray: {
@@ -39,7 +39,7 @@ module.exports = {
         display: ['Montserrat', 'Inter', 'sans-serif'],
       },
       boxShadow: {
-        'carbon': '0 4px 24px 0 rgba(34,197,94,0.08)',
+  'carbon': '0 4px 24px 0 rgba(255,136,0,0.08)',
         'carbon-dark': '0 4px 24px 0 rgba(10,25,47,0.24)',
       },
       borderRadius: {

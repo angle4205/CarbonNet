@@ -27,8 +27,8 @@ const Home = () => {
   const [showAlert, setShowAlert] = React.useState(true);
 
   return (
-    <div className="space-y-4 xs:space-y-6">
-  <h1 className="text-2xl font-semibold">Panel de Control</h1>
+    <div className="space-y-4 xs:space-y-6 bg-white dark:bg-carbonDark min-h-screen p-2 sm:p-4">
+      <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">Panel de Control</h1>
       
       {showAlert && (
         <AlertBanner
@@ -44,7 +44,7 @@ const Home = () => {
             <div className="flex justify-between items-center">
               <div>
                 <p className="text-sm text-gray-500">Emisiones Totales</p>
-                <h3 className="text-2xl font-semibold">1,234 tCO2e</h3>
+                <h3 className="text-2xl font-semibold">1.234,00 tCO2e</h3>
               </div>
               <Icon icon="lucide:cloud" className="text-green-500" width="24" height="24" />
             </div>
@@ -104,8 +104,8 @@ const Home = () => {
                 <Area 
                   type="monotone" 
                   dataKey="emisiones" 
-                  stroke="#059669" 
-                  fill="#10B981" 
+                  stroke="#ff8800" 
+                  fill="#ffb347" 
                 />
               </AreaChart>
             </ResponsiveContainer>

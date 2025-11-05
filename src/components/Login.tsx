@@ -16,12 +16,7 @@ const Login = () => {
     setIsLoading(true);
     try {
       await login(email, password);
-      addToast({
-        title: "Inicio de sesión exitoso",
-        description: "Bienvenido a BHP CarbonNet",
-        color: "success",
-      });
-  navigate("/dashboard");
+      navigate("/dashboard");
     } catch (error) {
       addToast({
         title: "Error de inicio de sesión",
@@ -34,7 +29,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-gray-100 px-2 xs:px-0">
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 to-gray-100 px-2 xs:px-0">
       <Card className="w-full max-w-xs xs:max-w-sm sm:max-w-md">
         <CardHeader className="flex flex-col items-center pb-4 pt-4 px-2 xs:pb-6 xs:pt-6 xs:px-4">
           <Icon icon="logos:bhp" width="60" height="30" className="xs:w-24 xs:h-12" />

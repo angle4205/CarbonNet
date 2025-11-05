@@ -1,3 +1,9 @@
+// Formatea números con punto como miles y coma como decimal
+function formatNumber(num) {
+  const parts = Number(num).toFixed(1).split('.');
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return parts.join(',');
+}
 import React from "react";
 import { Card, CardHeader, CardBody, Badge, Button } from "@heroui/react";
 
@@ -13,15 +19,13 @@ const roleColor = {
   viewer: "default"
 };
 
-const Users: React.FC = () => (
-  <div className="space-y-6">
-    <h1 className="text-2xl font-semibold">Gestión de Usuarios y Roles</h1>
-    <Card className="max-w-3xl mx-auto mb-6 dashboard-bg">
-      <CardHeader className="font-bold text-lg flex justify-between items-center">
-        <span>Usuarios</span>
+function Users() {
+  return (
+    <div className="space-y-6">
+      <h1 className="text-2xl font-semibold">Gestión de Usuarios y Roles</h1>
+      <div className="w-full bg-white dark:bg-carbonDark rounded-xl shadow p-4 mb-6">
+        <div className="font-bold text-lg mb-2">Usuarios</div>
         <Button color="primary" size="sm">Agregar usuario</Button>
-      </CardHeader>
-      <CardBody>
         <table className="w-full text-left">
           <thead>
             <tr>
@@ -42,9 +46,9 @@ const Users: React.FC = () => (
             ))}
           </tbody>
         </table>
-      </CardBody>
-    </Card>
-  </div>
-);
+      </div>
+    </div>
+  );
+}
 
 export default Users;

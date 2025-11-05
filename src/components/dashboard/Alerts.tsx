@@ -19,42 +19,20 @@ const Alerts: React.FC = () => {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-semibold">Alertas y Notificaciones</h1>
-      <Card className="max-w-2xl mx-auto mb-6 dashboard-bg">
-        <CardHeader className="font-bold text-lg">Alertas</CardHeader>
-        <CardBody>
-          <div className="space-y-2">
-            {alerts.map((alert, idx) => (
-              <React.Fragment key={idx}>
-                <div
-                  className={`flex items-center justify-between p-3 rounded cursor-pointer transition hover:bg-carbonGray-light`}
-                  onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                  aria-expanded={openIdx === idx}
-                >
-                  <div>
-                    <span className="font-semibold">{alert.message}</span>
-                    <span className="block text-xs text-gray-500">{alert.date}</span>
-                  </div>
-                  <Badge color={typeColor[alert.type]}>{alert.type}</Badge>
-                </div>
-                {openIdx === idx && (
-                  <div className="bg-carbonGray-light rounded p-3 mb-2 text-sm text-gray-700 flex flex-col items-center">
-                    <span>{alert.detail}</span>
-                    <Button
-                      size="xs"
-                      variant="light"
-                      color="default"
-                      className="mt-2"
-                      onClick={() => setOpenIdx(null)}
-                    >
-                      Cerrar
-                    </Button>
-                  </div>
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-        </CardBody>
-      </Card>
+    <div className="w-full bg-white dark:bg-carbonDark rounded-xl shadow p-4 mb-6">
+      <div className="font-bold text-lg flex justify-between items-center mb-2">
+        <span>Alertas</span>
+        <Button color="primary" size="sm">Nueva alerta</Button>
+      </div>
+      <ul className="space-y-2">
+        {alerts.map((alert, idx) => (
+          <li key={idx} className="flex items-center justify-between p-2 rounded transition hover:bg-carbonGray-light">
+            <span className="font-semibold">{alert.message}</span>
+            <Badge color={alert.type === 'Crítica' ? 'danger' : 'warning'}>{alert.type}</Badge>
+          </li>
+        ))}
+      </ul>
+    </div>
     </div>
   );
 };

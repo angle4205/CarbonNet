@@ -30,7 +30,7 @@ function Dashboard() {
       {!sidebarCollapsed && <Sidebar collapsed={sidebarCollapsed} setCollapsed={setSidebarCollapsed} />}
       {sidebarCollapsed && (
         <button
-          className="fixed bottom-4 left-4 z-50 bg-green-500 text-white border border-white rounded-full p-2 shadow-lg"
+          className="fixed bottom-4 left-4 z-50 bg-orange-500 text-white border border-white rounded-full p-2 shadow-lg"
           onClick={() => setSidebarCollapsed(false)}
           aria-label="Mostrar barra lateral"
         >
@@ -42,7 +42,7 @@ function Dashboard() {
         <Navbar isBordered className="px-2 sm:px-6">
           <NavbarBrand>
             <Icon icon="logos:bhp" width="48" height="24" className="sm:w-80 sm:h-40" />
-            <h2 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-green-400 via-green-500 to-green-300 bg-clip-text text-transparent">CarbonNet</h2>
+            <h2 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-orange-400 via-orange-500 to-orange-300 bg-clip-text text-transparent">CarbonNet</h2>
           </NavbarBrand>
           <NavbarContent className="hidden xs:flex gap-2 sm:gap-4 dashboard-bg" justify="center">
             <NavbarItem>
@@ -91,7 +91,7 @@ function Dashboard() {
               </div>
             </NavbarItem>
           </NavbarContent>
-          <NavbarContent as="div" justify="end" className="dashboard-bg">
+          <NavbarContent as="div" justify="end" className="dashboard-bg gap-2">
             <Dropdown placement="bottom-end">
               <DropdownTrigger>
                 <Avatar
